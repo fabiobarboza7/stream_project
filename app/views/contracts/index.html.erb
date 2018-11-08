@@ -1,1 +1,65 @@
-<%= @contracts %>
+<nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 py-3 px-4 text-center bg-white">
+				<p class="mb-0 aud-text-color"><strong>CONTRATOS</strong></p>
+			</div>
+		</div>
+	</div>
+</nav>
+<section>
+	<div class="container mt-5 border-line bg-white p-5">
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-sm-6 px-5">
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <label class="form-check-label" for="inlineRadio1">Data</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <label class="form-check-label" for="inlineRadio1">Nome</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+				  <label class="form-check-label" for="inlineRadio1">Area</label>
+				</div>
+				<%= form_tag contracts_path, method: :get do %>
+				  <%= text_field_tag :query,
+				    params[:query],
+				    class: "form-control",
+				    placeholder: "Pesquisar Contratos"
+				  %>
+				  <%= submit_tag "Pesquisar", class: "btn btn-outline-primary mt-2 search-btn" %>
+				<% end %>
+				<% if @contracts.any? %>
+					<div class="box rounded mt-2 p-2">
+						<ul class="list-inline">
+							<% @contracts.each do |contract| %>
+								<li><%= link_to contract.user.email, contract_path(contract) %></li>
+							<% end %>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+			<div class="col-sm-6 mt-sm-0 mt-3">
+				<%= image_tag "logo.png", :width => "300", class: "img-fluid d-flex mx-auto" %>
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-6 offset-sm-3 text-center">
+				<button class="btn border-line py-4 px-5 aud-text-color">GERAR NOVO CONTRATO</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<%= link_to dashboard_path do %>
+					<i class="fas fa-arrow-circle-left fa-2x aud-text-color"></i>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>
