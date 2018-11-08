@@ -1,7 +1,7 @@
 <nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12 p-3 d-flex justify-content-between align-items-center bg-white">
+			<div class="col-sm-12 py-3 px-4 d-flex justify-content-between align-items-center bg-white">
 				<p class="mb-0 aud-text-color"><strong>PAINEL DE CONTROLE</strong></p>
 				<%= image_tag "logo.png", class: "logo" %>
 			</div>
@@ -14,28 +14,36 @@
 			<div class="col-sm-12">
 				<div class="row py-5 px-5">
 					<div class="col-sm-3">
-						<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
-							<i class="fas fa-users"></i>
-							<p class="ml-2">Usuários</p>
-						</div>
+						<%= link_to users_path do %>
+							<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
+								<i class="fas fa-users"></i>
+								<p class="ml-2">Usuários</p>
+							</div>
+						<% end %>
 					</div>
 					<div class="col-sm-3">
-						<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
-							<i class="fas fa-file-signature"></i>
-							<p class="ml-2">Contratos</p>
-						</div>
+						<%= link_to contracts_path do %>
+							<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
+								<i class="fas fa-file-signature"></i>
+								<p class="ml-2">Contratos</p>
+							</div>
+						<% end %>
 					</div>
 					<div class="col-sm-3">
-						<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
-							<i class="fas fa-chart-line"></i>
-							<p class="ml-2">Relatórios</p>
-						</div>
+						<%= link_to reports_path do %>
+							<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
+								<i class="fas fa-chart-line"></i>
+								<p class="ml-2">Relatórios</p>
+							</div>
+						<% end %>
 					</div>
 					<div class="col-sm-3">
-						<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
-							<i class="fas fa-file-invoice-dollar"></i>
-							<p class="ml-2">Finanças</p>
-						</div>
+						<%= link_to finances_path do %>
+							<div class="border-line-2 d-flex justify-content-center align-items-center p-5 bg-white my-sm-0 my-2">
+								<i class="fas fa-file-invoice-dollar"></i>
+								<p class="ml-2">Finanças</p>
+							</div>
+						<% end %>
 					</div>
 				</div>
 			</div>

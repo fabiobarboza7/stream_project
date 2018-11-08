@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :contracts, only: [:index], path: "contratos"
+  resources :finances, only: [:index], path: "financeiro"
+  resources :reports, only: [:index], path: "relatorios"
+  resources :users, only: [:index], path: "usuarios"
+
   devise_for :users
   get 'pages/home'
   get '/dashboard', to: "pages#dashboard"
