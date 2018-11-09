@@ -30,16 +30,14 @@
 				    placeholder: "Pesquisar Contratos"
 				  %>
 				  <%= submit_tag "Pesquisar", class: "btn btn-outline-primary mt-2 search-btn" %>
-				<% end %>
-				<% if @contracts.any? %>
-					<div class="box rounded mt-2 p-2">
-						<ul class="list-inline">
-							<% @contracts.each do |contract| %>
-								<li><%= link_to contract.user.email, contract_path(contract) %></li>
-							<% end %>
-						</ul>
-					</div>
-				<% end %>
+				<% end %>	
+				<div class="box rounded mt-2 p-2">
+					<ul class="list-inline">
+						<% @contracts.each do |contract| %>
+							<li><%= link_to contract.user.email, contract_path(contract) %></li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
 			<div class="col-sm-6 mt-sm-0 mt-3">
 				<%= image_tag "logo.png", :width => "300", class: "img-fluid d-flex mx-auto" %>
@@ -51,7 +49,7 @@
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-sm-6 offset-sm-3 text-center">
-				<button class="btn border-line py-4 px-5 aud-text-color">GERAR NOVO CONTRATO</button>
+				<%= link_to "GERAR NOVO CONTRATO", new_contract_path, class: "btn border-line py-4 px-5 aud-text-color bg-white" %>		
 			</div>
 		</div>
 		<div class="row">

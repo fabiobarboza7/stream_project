@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :contracts, only: [:index, :show], path: "contratos"
+  resources :contracts, only: [:index, :show, :new], path: "contratos"
   resources :finances, only: [:index], path: "financeiro"
   resources :reports, only: [:index], path: "relatorios"
   resources :users, only: [:index], path: "usuarios"
